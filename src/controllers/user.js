@@ -1,75 +1,93 @@
 import sequelize from '../db.js'
 import { users } from "../models/users.js"
 
-export async function newUser(name, lastName, email, password) {
+export const newUser = async (req, res) => {
+    const {nombre, apellido, email, password} = req.body
     try {
         const user = await users.create({
-            nombre: name,
-            apellido: lastName,
+            nombre,
+            apellido,
             email,
             password
         })
-        console.log('El nuevo usuario ha sido creado con éxito.')
+        res.json(user)
     } catch (error) {
-        console.error('Error al crear el nuevo usuario', error)
+        return res.status(500).json({message: error.message})
     }
 }
 
-export async function getTableUser() {
-    const data = await users.findAll({
-        raw: true
-    })
-   
-    return data
-}
-
-export async function getClients() {
-    const data = await users.findAll({
-        where: {
-            id_rol: 2
-        }
-    })
-   
-    return data
-}
-
-export async function adminUser() {
-    users.update (
-        {id_rol: 1},
-        {where: sequelize.literal('id_usuario % 3 = 0')}
-    )
-}
-
-export async function updateInfoUser(id, name, lastName, email, password) {
-    users.update ({
-        nombre: name,
-        apellido: lastName,
-        email,
-        password
-    },
-    {where: sequelize.literal(`id_usuario = ${id}`)}
-    )
-}
-
-export async function deleteUser(id) {
-    users.destroy(
-        {where: sequelize.literal(`id_usuario = ${id}`)}
-    )
-}
-
-export async function getUsersCount() {
-    const amount = await users.count({
-        col: 'nombre'
-    })
-
-    return amount
-}
-
-export async function syncTables() {
+export const getTableUser = async (req, res) => {
     try {
-      await sequelize.sync()
-      console.log('Tablas sincronizadas correctamente.')
+        const data = await users.findAll()
+        res.json(data)
     } catch (error) {
-      console.error('Error en la sincronización', error)
+        return res.status(500).json({message: error.message})
+    }
+}
+
+export const getClients = async (req, res) => {
+    try {
+        const clients = await users.findAll({
+            where: {
+                id_rol: 2
+            }
+        })
+        res.json(clients)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
+export const adminUser = async (req, res) => {
+    try {
+        const tableUpdate = await users.update (
+            {id_rol: 1},
+            {where: sequelize.literal('id_usuario % 3 = 0')}
+        )
+        res.json(tableUpdate)
+    } catch (error) {
+        return res.status(500).json({message: error.message})      
+    }
+}
+
+export const updateInfoUser = async (req, res) => {
+    const { id } = req.params
+    const { nombre, apellido, email, password } = req.body
+    try {
+        const userUpdate = await users.findByPk(id)
+        userUpdate.nombre = nombre
+        userUpdate.apellido = apellido
+        userUpdate.email = email
+        userUpdate.password = password
+
+        await userUpdate.save()
+        res.json(userUpdate)
+    } catch (error) {
+        return res.status(500).json({message: error.message})      
+    }
+}
+
+export const deleteUser = async (req, res) => {
+    const { id } = req.params
+    try {
+        await users.destroy({
+            where: {
+                id_usuario: id
+            }
+        })
+        res.sendStatus(204)
+    } catch (error) {
+        return res.status(500).json({message: error.message})      
+    }
+}
+
+export const getUsersCount = async (req, res) => {
+    try {
+        const amount = await users.count({
+            col: 'nombre'
+        })
+        res.json(amount)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
     }
 }
