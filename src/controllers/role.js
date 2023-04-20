@@ -1,4 +1,4 @@
-import { roles } from "../../DB/ORM/roles.js"
+import { roles } from "../models/roles.js"
 
 export async function newRole(tipo){
     try {

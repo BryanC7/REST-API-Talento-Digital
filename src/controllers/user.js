@@ -1,5 +1,5 @@
-import sequelize from '../../db.js'
-import { users } from "../../DB/ORM/users.js"
+import sequelize from '../db.js'
+import { users } from "../models/users.js"
 
 export async function newUser(name, lastName, email, password) {
     try {

@@ -1,5 +1,5 @@
 import {Model, DataTypes} from 'sequelize'
-import sequelize from '../../db.js'
+import sequelize from '../db.js'
 
 export class orders extends Model {}
 
@@ -17,7 +17,7 @@ orders.init({
     id_usuario: {
         type: DataTypes.INTEGER,
         allowNull: false
-    } 
+    }
 }, 
 {
     sequelize,

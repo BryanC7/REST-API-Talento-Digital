@@ -1,5 +1,5 @@
 import {Model, DataTypes} from 'sequelize'
-import sequelize from '../../db.js'
+import sequelize from '../db.js'
 import { orders } from './orders.js'
 import { roles } from './roles.js'
 
@@ -30,7 +30,7 @@ users.init({
     },
     id_rol: {
         type: DataTypes.INTEGER,
-        defaultValue: 2,     
+        defaultValue: 2,
         allowNull: false
     }
 }, 

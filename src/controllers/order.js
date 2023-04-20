@@ -1,4 +1,4 @@
-import { orders } from "../../DB/ORM/orders.js"
+import { orders } from "../models/orders.js"
 
 export async function newOrder(num_order, id){
     try {
