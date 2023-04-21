@@ -1,12 +1,14 @@
 import { roles } from "../models/roles.js"
 
-export async function newRole(tipo){
+export const newRole = async (req, res) => {
+    const { tipo } = req.body
     try {
         const rol = await roles.create({
             tipo
         })
-        console.log('Nuevo rol creado')
+        console.log(rol)
+        // res.json(rol)
     } catch (error) {
-        console.error('No se pudo crear el nuevo rol.', error)
+        return res.status(500).json({message: error.message})
     }
 }
