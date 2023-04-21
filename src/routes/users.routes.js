@@ -9,7 +9,7 @@ router.get('/users/countUsers', getUsersCount)
 
 router.post('/users', newUser)
 
-router.put('/users/:id', updateInfoUser)
+router.put('/users', updateInfoUser)
 router.put('/users/admin', adminUser)
 
 router.delete('/users/:id', deleteUser)

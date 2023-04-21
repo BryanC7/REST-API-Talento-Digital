@@ -6,8 +6,7 @@ export const newRole = async (req, res) => {
         const rol = await roles.create({
             tipo
         })
-        console.log(rol)
-        // res.json(rol)
+        res.json(rol)
     } catch (error) {
         return res.status(500).json({message: error.message})
     }

@@ -18,7 +18,11 @@ export const newUser = async (req, res) => {
 
 export const getTableUser = async (req, res) => {
     try {
-        const data = await users.findAll()
+        const data = await users.findAll({
+            order: [
+                ['id_usuario', 'ASC']
+            ]
+        })
         res.json(data)
     } catch (error) {
         return res.status(500).json({message: error.message})
@@ -51,8 +55,7 @@ export const adminUser = async (req, res) => {
 }
 
 export const updateInfoUser = async (req, res) => {
-    const { id } = req.params
-    const { nombre, apellido, email, password } = req.body
+    const { id, nombre, apellido, email, password } = req.body
     try {
         const userUpdate = await users.findByPk(id)
         userUpdate.nombre = nombre
