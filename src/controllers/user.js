@@ -31,12 +31,22 @@ export const getTableUser = async (req, res) => {
 
 export const getClients = async (req, res) => {
     try {
-        const clients = await users.findAll({
-            where: {
-                id_rol: 2
-            }
+        const data = await users.findAll({
+            where: {id_rol: 2}
         })
-        res.json(clients)
+        res.json(data)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
+export const getUsersCounts = async (req, res) => {
+    try {
+        const amount = await users.findAll({
+            attributes: ['id_rol', [sequelize.fn('count', sequelize.col('id_rol')), 'cantidad']],
+            group: ['id_rol']
+        })
+        res.json(amount)
     } catch (error) {
         return res.status(500).json({message: error.message})
     }
@@ -81,16 +91,5 @@ export const deleteUser = async (req, res) => {
         res.sendStatus(204)
     } catch (error) {
         return res.status(500).json({message: error.message})      
-    }
-}
-
-export const getUsersCount = async (req, res) => {
-    try {
-        const amount = await users.count({
-            col: 'nombre'
-        })
-        res.json(amount)
-    } catch (error) {
-        return res.status(500).json({message: error.message})
     }
 }

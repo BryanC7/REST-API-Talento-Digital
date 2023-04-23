@@ -1,11 +1,11 @@
 import { Router } from "express"
-import { newUser, getTableUser, updateInfoUser, deleteUser, getClients, getUsersCount, adminUser } from '../controllers/user.js'
+import { newUser, getTableUser, updateInfoUser, deleteUser, adminUser, getUsersCounts, getClients } from '../controllers/user.js'
 
 const router = Router()
 
 router.get('/users', getTableUser)
 router.get('/users/clients', getClients)
-router.get('/users/countUsers', getUsersCount)
+router.get('/users/userscount', getUsersCounts)
 
 router.post('/users', newUser)
 

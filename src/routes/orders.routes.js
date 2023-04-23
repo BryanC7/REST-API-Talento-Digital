@@ -1,11 +1,12 @@
 import { Router } from "express"
-import { newOrder, getTableOrders, getOrdersCount, deleteOrder } from "../controllers/order.js"
+import { newOrder, getTableOrders, getOrdersUser, getOrdersCount, deleteOrder } from "../controllers/order.js"
 
 const router = Router()
 
 // Traer tablas de pedidos y cantidades
 router.get('/orders', getTableOrders)
 router.get('/orders/countOrders', getOrdersCount)
+router.get('/orders/:id', getOrdersUser)
 
 // Crear nuevo pedido
 router.post('/orders', newOrder)

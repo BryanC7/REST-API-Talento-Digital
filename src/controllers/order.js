@@ -29,6 +29,20 @@ export const getTableOrders = async (req, res) => {
     }
 }
 
+export const getOrdersUser = async (req, res) => {
+    const { id } = req.params
+    try {
+        const data = await orders.findAll({
+            where: {
+                id_usuario: id
+            }
+        })
+        res.json(data)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
 export const getOrdersCount = async (req, res) => {
     try {
         const amount = await orders.count({
