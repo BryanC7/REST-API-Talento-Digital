@@ -18,11 +18,7 @@ export const newUser = async (req, res) => {
 
 export const getTableUser = async (req, res) => {
     try {
-        const data = await users.findAll({
-            order: [
-                ['id_usuario', 'ASC']
-            ]
-        })
+        const data = await users.findAll()
         res.json(data)
     } catch (error) {
         return res.status(500).json({message: error.message})
@@ -32,7 +28,10 @@ export const getTableUser = async (req, res) => {
 export const getClients = async (req, res) => {
     try {
         const data = await users.findAll({
-            where: {id_rol: 2}
+            where: {id_rol: 2},
+            order: [
+                ['id_usuario', 'ASC']
+            ]
         })
         res.json(data)
     } catch (error) {
