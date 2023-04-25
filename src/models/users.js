@@ -13,19 +13,19 @@ users.init({
         autoIncrement: true
     },
     nombre: {
-        type: DataTypes.STRING(15),
+        type: DataTypes.STRING(20),
         allowNull: false,
     },
     apellido: {
-        type: DataTypes.STRING(15),
+        type: DataTypes.STRING(20),
         allowNull: false
     },
     email: {
-        type: DataTypes.STRING(40),
+        type: DataTypes.STRING(50),
         allowNull: false
     }, 
     password: {
-        type: DataTypes.STRING(15),
+        type: DataTypes.STRING(70),
         allowNull: false
     },
     id_rol: {
