@@ -9,8 +9,9 @@ async function connectDB() {
     try {
         await sequelize.authenticate()
         console.log('Conexión establecida')
-        app.listen(DB_PORT)
-        console.log(`Servidor funcionando en el puerto ${DB_PORT}`)
+        app.listen(DB_PORT, () => {
+            console.log('Servidor conectado en el puerto', DB_PORT)
+        })
     } catch (error) {
         console.log('Error a conectar la base de datos', error)
     }
