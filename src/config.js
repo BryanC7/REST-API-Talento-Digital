@@ -2,8 +2,8 @@ import { config } from 'dotenv'
 
 config()
 
-export const DB_USER = process.env.USER_DB
-export const DB_PASSWORD = process.env.PASSWORD_DB
-export const DB_HOST = process.env.HOST_DB
-export const DB_DATABASE = process.env.NAME_DB
-export const DB_PORT = process.env.PORT_DB
+export const USER_DB = process.env.USER_DB
+export const PASSWORD_DB = process.env.PASSWORD_DB
+export const HOST_DB = process.env.HOST_DB
+export const NAME_DB = process.env.NAME_DB
+export const PORT_DB = process.env.PORT_DB

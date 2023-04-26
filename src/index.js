@@ -1,6 +1,6 @@
 import app from "./app.js"
 import sequelize from './db.js'
-import { DB_PORT } from "./config.js"
+import { PORT_DB } from "./config.js"
 import { orders } from "./models/orders.js"
 import { roles } from "./models/roles.js"
 import { users } from "./models/users.js"
@@ -9,8 +9,8 @@ async function connectDB() {
     try {
         await sequelize.authenticate()
         console.log('Conexión establecida')
-        app.listen(DB_PORT, () => {
-            console.log('Servidor conectado en el puerto', DB_PORT)
+        app.listen(PORT_DB, () => {
+            console.log('Servidor conectado en el puerto', PORT_DB)
         })
     } catch (error) {
         console.log('Error a conectar la base de datos', error)

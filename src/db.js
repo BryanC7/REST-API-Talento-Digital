@@ -1,13 +1,13 @@
 import {Sequelize} from 'sequelize'
-import { DB_DATABASE, DB_HOST, DB_USER, DB_PASSWORD, DB_PORT } from './config.js'
+import { NAME_DB, USER_DB, PASSWORD_DB, HOST_DB, PORT_DB } from './config.js'
 
 export const sequelize = new Sequelize (
-    DB_DATABASE,
-    DB_USER,
-    DB_PASSWORD,
+    NAME_DB,
+    USER_DB,
+    PASSWORD_DB,
     { 
-        host: DB_HOST, 
-        DB_PORT, // Esta linea se comenta para utilizar la api en localhost
+        host: HOST_DB, 
+        PORT_DB, // Esta linea se comenta para utilizar la api en localhost
         dialect:'postgres',
         define: {
             timestamps: false
