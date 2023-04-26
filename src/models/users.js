@@ -28,6 +28,10 @@ users.init({
         type: DataTypes.STRING(70),
         allowNull: false
     },
+    imagen: {
+        type: DataTypes.STRING(250),
+        allowNull: false
+    },
     id_rol: {
         type: DataTypes.INTEGER,
         defaultValue: 2,

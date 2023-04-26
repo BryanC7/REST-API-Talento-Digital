@@ -2,13 +2,14 @@ import sequelize from '../db.js'
 import { users } from "../models/users.js"
 
 export const newUser = async (req, res) => {
-    const {nombre, apellido, email, password} = req.body
+    const {nombre, apellido, email, password, imagen} = req.body
     try {
         const user = await users.create({
             nombre,
             apellido,
             email,
-            password
+            password,
+            imagen
         })
         res.json(user)
     } catch (error) {
@@ -64,13 +65,14 @@ export const adminUser = async (req, res) => {
 }
 
 export const updateInfoUser = async (req, res) => {
-    const { id, nombre, apellido, email, password } = req.body
+    const { id, nombre, apellido, email, password, imagen } = req.body
     try {
         const userUpdate = await users.findByPk(id)
         userUpdate.nombre = nombre
         userUpdate.apellido = apellido
         userUpdate.email = email
         userUpdate.password = password
+        userUpdate.imagen = imagen
 
         await userUpdate.save()
         res.json(userUpdate)
