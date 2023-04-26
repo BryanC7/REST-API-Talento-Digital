@@ -7,7 +7,7 @@ export const sequelize = new Sequelize (
     PASSWORD_DB,
     { 
         host: HOST_DB, 
-        PORT_DB, // Esta linea se comenta para utilizar la api en localhost
+        port: PORT_DB, // Esta linea se comenta para utilizar la api en localhost
         dialect:'postgres',
         define: {
             timestamps: false
