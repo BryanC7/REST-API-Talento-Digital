@@ -19,7 +19,7 @@ async function connectDB() {
 
 export async function syncTables() {
     try {
-        await sequelize.sync({force: false})
+        await sequelize.sync({force: true})
         console.log('Tablas sincronizadas correctamente')
     } catch(error) {
         console.log('Error al crear tablas', error)
