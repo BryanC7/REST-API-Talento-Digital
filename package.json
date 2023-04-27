@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cd src && nodemon index.js",
     "start": "node src/index.js",
-    "tables-info": "cd src && nodemon query.js"
+    "tables": "cd src && nodemon query.js"
   },
   "keywords": [],
   "author": "",
