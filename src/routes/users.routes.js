@@ -1,7 +1,7 @@
 // Importación de express
 import { Router } from "express"
 import { syncTables } from "../index.js"
-import { newUser, getTableUser, updateInfoUser, deleteUser, adminUser, getUsersCounts, getClients, getClientsNameOrder, getClientsLastNameOrder} from '../controllers/user.js'
+import { newUser, getTableUser, updateInfoUser, deleteUser, getUsersCounts, getClients, getClientsNameOrder, getClientsLastNameOrder} from '../controllers/user.js'
 
 // Uso de Router
 const router = Router()
