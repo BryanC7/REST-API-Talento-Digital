@@ -1,9 +1,13 @@
-import { addRole, adminRole } from "./controllers/role.js"
+// Importación de funciones
+import { addRole, adminTest } from "./controllers/role.js"
 import { syncTables } from "./index.js"
 
-// await syncTables()
+// Crea las tablas a partir de los modelos
+await syncTables()
 
-// await addRole('Admin')
-// await addRole('Client')
+// // Permite agregar el rol de administrador y cliente
+await addRole('Admin')
+await addRole('Client')
 
-await adminRole()
+// Administrador de prueba
+await adminTest()

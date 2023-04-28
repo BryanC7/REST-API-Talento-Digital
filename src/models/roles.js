@@ -1,6 +1,10 @@
+// Importación de sequelize
 import {Model, DataTypes} from 'sequelize'
+
+// Importación de variable sequelize
 import sequelize from '../db.js'
 
+// Exportación de clase
 export class roles extends Model {}
 
 roles.init({

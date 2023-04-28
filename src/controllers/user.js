@@ -1,6 +1,10 @@
+// Importación de sequelize
 import sequelize from '../db.js'
+
+// Importación de modelo de usuario
 import { users } from "../models/users.js"
 
+// Crear nuevo usuario
 export const newUser = async (req, res) => {
     const {nombre, apellido, email, password, imagen} = req.body
     try {
@@ -17,6 +21,7 @@ export const newUser = async (req, res) => {
     }
 }
 
+// Traer la tabla de usuarios
 export const getTableUser = async (req, res) => {
     try {
         const data = await users.findAll()
@@ -26,6 +31,7 @@ export const getTableUser = async (req, res) => {
     }
 }
 
+// Traer la tabla de clientes
 export const getClients = async (req, res) => {
     try {
         const data = await users.findAll({
@@ -68,6 +74,35 @@ export const getClientsLastNameOrder = async (req, res) => {
     }
 }
 
+export const getClientsNameOrder = async (req, res) => {
+    try {
+        const data = await users.findAll({
+            where: {id_rol: 2},
+            order: [
+                ['nombre', 'ASC']
+            ]
+        })
+        res.json(data)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
+export const getClientsLastNameOrder = async (req, res) => {
+    try {
+        const data = await users.findAll({
+            where: {id_rol: 2},
+            order: [
+                ['apellido', 'ASC']
+            ]
+        })
+        res.json(data)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
+// Traer la cantidad de administradores y clientes
 export const getUsersCounts = async (req, res) => {
     try {
         const amount = await users.findAll({
@@ -80,18 +115,7 @@ export const getUsersCounts = async (req, res) => {
     }
 }
 
-export const adminUser = async (req, res) => {
-    try {
-        const tableUpdate = await users.update (
-            {id_rol: 1},
-            {where: sequelize.literal('id_usuario % 3 = 0')}
-        )
-        res.json(tableUpdate)
-    } catch (error) {
-        return res.status(500).json({message: error.message})      
-    }
-}
-
+// Actualizar información del usuario
 export const updateInfoUser = async (req, res) => {
     const { id, nombre, apellido, email, password, imagen } = req.body
     try {
@@ -109,6 +133,7 @@ export const updateInfoUser = async (req, res) => {
     }
 }
 
+// Eliminar un usuario
 export const deleteUser = async (req, res) => {
     const { id } = req.params
     try {

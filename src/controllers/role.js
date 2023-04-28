@@ -1,19 +1,11 @@
+// Importación de sequelize
 import sequelize from '../db.js'
+
+// Importaciones de modelos
 import { roles } from "../models/roles.js"
 import { users } from "../models/users.js"
 
-export const newRole = async (req, res) => {
-    const { tipo } = req.body
-    try {
-        const rol = await roles.create({
-            tipo
-        })
-        res.json(rol)
-    } catch (error) {
-        return res.status(500).json({message: error.message})
-    }
-}
-
+// Crear un nuevo rol
 export async function addRole(tipo){
     try {
         const rol = await roles.create({
@@ -25,14 +17,19 @@ export async function addRole(tipo){
     }
 }
 
-export async function adminRole(){
+// Usuario tipo administrador de prueba
+export async function adminTest() {
     try {
-        await users.update (
-            {id_rol: 1},
-            {where: sequelize.literal('id_usuario % 3 = 0')}
-        )
-        console.log('Actualizando usuarios con rol admin')
+        users.create ({
+            nombre: 'Admin',
+            apellido: 'Prueba',
+            email: 'admin.prueba@gmail.com',
+            password: '1234',
+            imagen: '/img/admin.jpg',
+            id_rol: 1
+        })
+        console.log('Administrador de prueba creado')
     } catch (error) {
-        console.error('No se pudo actualizar el rol.', error) 
+        console.error('No se pudo crear el administrador.', error)
     }
 }

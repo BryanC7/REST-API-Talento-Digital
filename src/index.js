@@ -1,3 +1,4 @@
+// Importación de variables
 import app from "./app.js"
 import sequelize from './db.js'
 import { PORT_DB } from "./config.js"
@@ -5,6 +6,9 @@ import { orders } from "./models/orders.js"
 import { roles } from "./models/roles.js"
 import { users } from "./models/users.js"
 
+/**
+ * Conecta con la base de datos en el puerto definido por las variables de entorno
+ */
 async function connectDB() {
     try {
         await sequelize.authenticate()
@@ -17,6 +21,9 @@ async function connectDB() {
     }
 }
 
+/**
+ * Sincroniza las tablas mediante el uso de los modelos
+ */
 export async function syncTables() {
     try {
         await sequelize.sync({force: true})
@@ -26,4 +33,5 @@ export async function syncTables() {
     }
 }
 
+// Llamada a la función para conectar con la DB
 connectDB()
