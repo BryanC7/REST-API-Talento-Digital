@@ -40,6 +40,34 @@ export const getClients = async (req, res) => {
     }
 }
 
+export const getClientsNameOrder = async (req, res) => {
+    try {
+        const data = await users.findAll({
+            where: {id_rol: 2},
+            order: [
+                ['nombre', 'ASC']
+            ]
+        })
+        res.json(data)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
+export const getClientsLastNameOrder = async (req, res) => {
+    try {
+        const data = await users.findAll({
+            where: {id_rol: 2},
+            order: [
+                ['apellido', 'ASC']
+            ]
+        })
+        res.json(data)
+    } catch (error) {
+        return res.status(500).json({message: error.message})
+    }
+}
+
 export const getUsersCounts = async (req, res) => {
     try {
         const amount = await users.findAll({
