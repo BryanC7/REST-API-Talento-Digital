@@ -28,8 +28,8 @@ Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a ev
 
 ## Screenshots
 #### Modelo entidad - relación
-![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/main/screenshots/creacion-db.png?raw=true)
+![App Screenshot](https://raw.githubusercontent.com/BryanC7/REST-API-Talento-Digital/main/screenshots/creacion-db.png)
 #### Creación base de datos (uso de extensión postgreSQL en VSC)
-![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/main/screenshots/nombre-db.png?raw=true)
+![App Screenshot](https://raw.githubusercontent.com/BryanC7/REST-API-Talento-Digital/main/screenshots/nombre-db.png)
 #### Query para la creación de la base de datos (nombre)
-![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/main/screenshots/db-tablas.png?raw=true)
+![App Screenshot](https://raw.githubusercontent.com/BryanC7/REST-API-Talento-Digital/main/screenshots/db-tablas.png)
