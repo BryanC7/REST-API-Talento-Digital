@@ -21,6 +21,19 @@ async function connectDB() {
     }
 }
 
+
+/**
+ * Crea la base de datos con el nombre proporcionado en variable sequelize
+ */
+export async function createDatabase() {
+    try {
+        await sequelize.query('CREATE DATABASE digitalizate_db')
+        console.log('Base datos creada correctamente')
+    } catch (error) {
+        console.log('Error al crear la base de datos', error)
+    }
+}
+
 /**
  * Sincroniza las tablas mediante el uso de los modelos
  */

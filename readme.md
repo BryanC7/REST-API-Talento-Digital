@@ -12,9 +12,13 @@ Clonar el repositorio
 
 ## Instrucciones para la ejecución del proyecto  
 1. En primer lugar, ejecutar mediante terminal el comando `npm i` para llevar a cabo las instalaciones de todas las dependencias implementadas.
-2. Es necesario la creación manual de la base de datos con `postgreSQL` (Idealmente utilizar las variables de entorno definidas en el archivo "config.js". De lo contrario, en el archivo previamente nombrado cambiar los valores asignados por tus credenciales personales de postgreSQL).
-3. Ejecutar el comando `npm run tables` para la sincronización de los modelos, generar las tablas, agregar los 2 roles de administrador / cliente y agregar un usuario de prueba el cual posee rol administrador (Para crear un usuario de tipo cliente simplemente registrarse y logearse en la página).
-4. Finalmente, en la terminal ejecutar `npm run dev` para arrancar la api en el puerto previamente definido (Si utilizas otro distinto al 4000 va a ser necesario cambiar la url usada en el repositorio "Portafolio-Talento-Digital").
+2. Ejecutar el comando `npm run db-tables` para la creación de la base de datos, sincronización de los modelos, generación de las tablas, se agregan los 2 roles de administrador / cliente y se agrega un usuario de prueba el cual posee rol administrador (Para crear un usuario de tipo cliente simplemente registrarse y logearse en la página).
+
+```bash
+Correo electrónico: admin.prueba@gmail.com
+Contraseña: 1234
+```
+3. Finalmente, en la terminal ejecutar `npm run dev` para arrancar la api en el puerto previamente definido (Si utilizas otro distinto al 4000 va a ser necesario cambiar la url usada en el repositorio "Portafolio-Talento-Digital").
 
 ## Rúbrica
 Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a evaluar están divididos entre ambos proyectos):
@@ -40,15 +44,7 @@ Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a ev
 <p align="center">
     <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/modelo-entidad-relacion.png?raw=true"/>
 </p>
-#### Creación base de datos (uso de extensión postgreSQL en VSC)
-<p align="center">
-    <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/creacion-db.png?raw=true"/>
-</p>
-#### Query para la creación de la base de datos (nombre)
-<p align="center">
-    <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/nombre-db.png?raw=true"/>
-</p>
-#### Visualización de tablas
+#### Visualización de tablas una vez creadas (uso de extensión postgreSQL en VSC)
 <p align="center">
     <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/db-tablas.png?raw=true"/>
 </p>
