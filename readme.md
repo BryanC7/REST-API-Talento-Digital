@@ -27,9 +27,11 @@ Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a ev
 - Creación de servicio REST: ```/src/app.js``` ```/src/config.js``` ```/src/db.js``` ```/src/index.js```
 
 ## Screenshots
-#### Modelo entidad - relación
-![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/creacion-db.png?raw=true)
+#### Modelo entidad-relación
+![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/modelo-entidad-relacion.png?raw=true)
 #### Creación base de datos (uso de extensión postgreSQL en VSC)
-![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/nombre-db.png?raw=true)
+![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/creacion-db.png?raw=true)
 #### Query para la creación de la base de datos (nombre)
+![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/nombre-db.png?raw=true)
+#### Visualización de tablas
 ![App Screenshot](https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/db-tablas.png?raw=true)
