@@ -48,6 +48,11 @@ Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a ev
     <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/postgreSQL.png?raw=true"/>
 </p>
 
+#### Extensión instalada
+<p align="center">
+    <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/extension.png?raw=true"/>
+</p>
+
 #### Modelo entidad-relación
 <p align="center">
     <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/modelo-entidad-relacion.png?raw=true"/>
@@ -58,7 +63,7 @@ Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a ev
     <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/creacion-db.png?raw=true"/>
 </p>
 
-#### Nombre base de datos
+#### Nombre base de datos (Ejecutar con ctrl + enter)
 <p align="center">
     <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/nombre-db.png?raw=true"/>
 </p>
