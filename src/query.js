@@ -1,9 +1,6 @@
 // Importación de funciones
 import { addRole, adminTest } from "./controllers/role.js"
-import { syncTables, createDatabase } from "./index.js"
-
-// Crea la base de datos
-await createDatabase()
+import { syncTables } from "./index.js"
 
 // Crea las tablas a partir de los modelos
 await syncTables()

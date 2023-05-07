@@ -1,6 +1,3 @@
-// Importación de sequelize
-import sequelize from '../db.js'
-
 // Importaciones de modelos
 import { roles } from "../models/roles.js"
 import { users } from "../models/users.js"
@@ -25,7 +22,7 @@ export async function adminTest() {
             apellido: 'Prueba',
             email: 'admin.prueba@gmail.com',
             password: '1234',
-            imagen: '/img/admin.jpg',
+            imagen: '/img/profile/admin.jpg',
             id_rol: 1
         })
         console.log('Administrador de prueba creado')
