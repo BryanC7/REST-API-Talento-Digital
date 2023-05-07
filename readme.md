@@ -19,7 +19,7 @@ Clonar el repositorio
 Correo electrónico: admin.prueba@gmail.com
 Contraseña: 1234
 ```
-3. Finalmente, en la terminal ejecutar `npm run dev` para arrancar la api en el puerto previamente definido (Si utilizas otro distinto al 4000 va a ser necesario cambiar la url usada en el repositorio "Portafolio-Talento-Digital").
+4. Finalmente, en la terminal ejecutar `npm run dev` para arrancar la api en el puerto previamente definido (Si utilizas otro distinto al 4000 va a ser necesario cambiar la url usada en el repositorio "Portafolio-Talento-Digital").
 
 ## Rúbrica
 Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a evaluar están divididos entre ambos proyectos):
