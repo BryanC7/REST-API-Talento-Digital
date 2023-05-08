@@ -13,7 +13,7 @@ Clonar el repositorio
 ## Instrucciones para la ejecución del proyecto  
 1. En primer lugar, ejecutar mediante terminal el comando `npm i` para llevar a cabo las instalaciones de todas las dependencias implementadas.
 2. Se recomienda instalar la extensión de postgreSQL en Visual Studio Code para tener un mayor control de la base de datos y sus tablas.
-3. Es necesario la creación manual de la base de datos (Idealmente utilizar las variables de entorno definidas en el archivo "config.js". De lo contrario, en el archivo previamente nombrado cambiar los valores asignados por tus credenciales personales de postgreSQL).
+3. Es necesario la creación manual de la base de datos (Idealmente utilizar las variables de entorno definidas en el archivo "config.js". De lo contrario, en el archivo previamente nombrado cambiar los valores asignados por tus credenciales personales de postgreSQL). Imágenes de apoyo en la sección de screenshots
 4. Ejecutar el comando `npm run db-tables` para la sincronización de los modelos, generación de las tablas, se agregan los 2 roles de administrador / cliente y se agrega un usuario de prueba el cual posee rol administrador (Para crear un usuario de tipo cliente simplemente registrarse y logearse en la página).
 
 ```bash
@@ -42,6 +42,15 @@ Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a ev
 - Creación de servicio REST: `/src/app.js` `/src/config.js` `/src/db.js` `/src/index.js`
 
 ## Screenshots
+#### Modelo entidad-relación
+<p align="center">
+    <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/modelo-entidad-relacion.png?raw=true"/>
+</p>
+
+#### Definición de la contraseña en la instalación de postgreSQL (utilizada en las variables de entorno) 
+<p align="center">
+    <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/password.png?raw=true"/>
+</p>
 
 #### Instalación extensión postgreSQL
 <p align="center">
@@ -53,10 +62,6 @@ Items de la rúbrica y sus archivos respectivos (La totalidad de los puntos a ev
     <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/extension.png?raw=true"/>
 </p>
 
-#### Modelo entidad-relación
-<p align="center">
-    <img src="https://github.com/BryanC7/REST-API-Talento-Digital/blob/master/screenshots/modelo-entidad-relacion.png?raw=true"/>
-</p>
 
 #### Creación base de datos
 <p align="center">
